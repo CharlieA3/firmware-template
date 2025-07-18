@@ -4,7 +4,7 @@ manifest:
       url-base: https://github.com/zephyrproject-rtos
 
   projects:
-    -name: zephyr
+    - name: zephyr
     remote: zephyrproject-rtos
     revision: main
     import:
