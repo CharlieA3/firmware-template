@@ -1,0 +1,6 @@
+# defines the BOARD_PLAITPLIOT symbol and selects the esp 32 wroom 32ue and the pro cpu,  
+
+config BOARD_PLAITPILOT
+    # TODO: why is this like this??
+	select SOC_ESP32S3_WROOM_N8
+	select SOC_ESP32S3_PROCPU if BOARD_ESP32S3_DEVKITC_ESP32S3_PROCPU

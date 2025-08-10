@@ -1,0 +1,7 @@
+board:
+  name: plaitpilot
+  # name of directory that is holding this board
+  vendor: custom
+  # this is just names for any SoCs, not where the actual SoC selection occurs (happens in Kconfig)
+  socs:
+  - name: esp32s3
