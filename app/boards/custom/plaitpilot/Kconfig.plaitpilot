@@ -1,6 +1,6 @@
 # defines the BOARD_PLAITPLIOT symbol and selects the esp 32 wroom 32ue and the pro cpu,  
 
+# TODO: need to change this back to the wroom ue32 or whatever the fuck it was.
 config BOARD_PLAITPILOT
-    # TODO: why is this like this??
 	select SOC_ESP32S3_WROOM_N8
-	select SOC_ESP32S3_PROCPU if BOARD_ESP32S3_DEVKITC_ESP32S3_PROCPU
+	select SOC_ESP32S3_PROCPU if BOARD_PLAITPILOT_PROCPU

@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <zephyr/kernel.h>
-#include <zephyr/device.h>
+// #include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
+
+#define SYS_CLOCK_HW_CYCLES_PER_SEC CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC
 
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
 

@@ -5,11 +5,11 @@
 &pinctrl {
     uart0_default: uart0_default {
         group1 {
-            pinmux = <UART_TX_GPIO43>;
+            pinmux = <UART0_TX_GPIO33>;
             output-high;
         };
         group2 {
-            pinmux = <GPIO_RX_GPIO44>;
+            pinmux = <UART0_RX_GPIO34>;
             bias-pull-up;
         };
     };
