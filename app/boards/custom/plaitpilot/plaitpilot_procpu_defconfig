@@ -1,7 +1,6 @@
 # default configurations for pre-existing kconfig symbols
 # Basically what this means is for this custom board, when using only the propcpu within the esp32 (dualcore normally), you need these configurations for the board to work by default, hence "def" and "config".
 CONFIG_MAIN_STACK_SIZE=2048
-
 CONFIG_CLOCK_CONTROL=y 
 CONFIG_SYS_CLOCK_EXISTS=y
 CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC=80000000

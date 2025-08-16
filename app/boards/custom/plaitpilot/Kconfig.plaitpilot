@@ -2,5 +2,5 @@
 
 # TODO: need to change this back to the wroom ue32 or whatever the fuck it was.
 config BOARD_PLAITPILOT
-	select SOC_ESP32S3_WROOM_N8
-	select SOC_ESP32S3_PROCPU if BOARD_PLAITPILOT_PROCPU
+	select SOC_ESP32_WROOM_32UE_N4
+	select SOC_ESP32_PROCPU if BOARD_PLAITPILOT_PROCPU

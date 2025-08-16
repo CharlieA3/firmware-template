@@ -16,7 +16,7 @@
         //driver code uses this to keep procesors alive during code execution
         watchdog0 = &wdt0;
         // this is an LED that is "permenantly" soldered on the board
-        led-0 = &led0;
+        led0 = &led0;
         uart-0 = &uart0;
         sw0 = &button0;
     };
@@ -48,15 +48,6 @@
     };
 };
 
-&cpu0 {
-    clock-frequency = <240000000>;
-    xtal-freq = <40000000>;  // 40MHz crystal
-};
-
-// &cpu1 {
-//     clock-frequency = <DT_FREQ_M(240)>;
-// };
-
 &uart0 {
     status = "okay";
     current-speed = <115200>;
@@ -64,7 +55,7 @@
     pinctrl-names = "default";
 };
 
-&gpio {
+&gpio0 {
     status = "okay";
 };
 
