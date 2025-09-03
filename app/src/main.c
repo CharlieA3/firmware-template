@@ -1,42 +1,41 @@
+#include <stdio.h>
 #include <zephyr/kernel.h>
-#include <zephyr/device.h>
+// #include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
 
-static const struct device *gpio_ct_dev=
-	DEVICE_DT_GET(DT_NODELABEL(gpio0));
+#define SYS_CLOCK_HW_CYCLES_PER_SEC CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC
+
+static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
 
 int main(void)
 {
-    if(!device_is_ready(gpio_ct_dev))
+    if (!device_is_ready(&led))
     {
         return 0;
     }
+
+    int state = 0;
 
     int ret;
-    ret= gpio_pin_configure(gpio_ct_dev, 25, GPIO_OUTPUT_ACTIVE);
+    ret = gpio_pin_configure_dt(&led, GPIO_OUTPUT);
 
-    if(ret!=0)
+    if (ret != 0)
     {
         return 0;
     }
 
-    while(true)
+    while (true)
     {
-        ret = gpio_pin_set_raw(gpio_ct_dev,25,1);
-        if(ret!=0)
+        state = !state;
+        ret = gpio_pin_set_dt(&led, state);
+        if (ret != 0)
         {
             return 0;
         }
-        k_msleep(500);
+        printk("LED is now in state: %d", state);
 
-        ret = gpio_pin_set_raw(gpio_ct_dev,25,0);
-        if(ret!=0)
-        {
-            return 0;
-        }
-        k_msleep(500);
-
+        k_msleep(1000);
     }
 
-    return 1;
+    return 0;
 }
