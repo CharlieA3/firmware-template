@@ -1,2 +1,2 @@
-# firmware-template
-Starter repository for generate firmware. Start here...
+# zephyr-template
+Starter repository for zephyr development.
